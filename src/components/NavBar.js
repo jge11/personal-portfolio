@@ -55,3 +55,5 @@ export const NavBar = () => {
     </Navbar>
     )
 }
+
+//ended at 14:12
