@@ -63,8 +63,3 @@ export const Banner = () => {
         </section>
     )
 }
-
-
-
-
-//end video 34:55
