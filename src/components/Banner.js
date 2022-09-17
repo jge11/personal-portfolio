@@ -28,7 +28,7 @@ export const Banner = () => {
         setText(updatedText);
 
         if (isDeleting) {
-            setDelta(prevDelta => prevDelta / 2);
+            setDelta(prevDelta => prevDelta /2)
           }
 
         if (!isDeleting && updatedText === fullText){
@@ -44,25 +44,27 @@ export const Banner = () => {
     return (
         <section className="banner" id="home">
           <Container>
-            <Row className="aligh-items-center">
+            <Row className="align-items-center">
               <Col xs={12} md={6} xl={7}>
-              <span className="tagline">Welcome to my Portfolio
-              </span>
-                        <h1>
-                            {`Hi I'm Javier Garcia-Estrada`}<span className="wrap">{text}</span>
-                        </h1>
-                        <p> I am a self-taught programmer. I took an interest in web development as I found it to be an interesting field I knew nothing about. But wanted to know how websites work and the process it takes to build one.
-                            I am interested in learning more about the field as I work in it and learn from those who have been at it longer than I have so I can cultivate my skills even more and make them more refined.
-                        </p>
-                        <button onClick={() => console.log("connect")}> Let's Connect <ArrowRightCircle size={25}/></button>
-                        <Col xs={12} md={6} xl={5}>
+              <span className="tagline">Welcome to my Portfolio</span>
+                    <h1>
+                        {`Hi I'm Javier Garcia-Estrada `}<span className="wrap">{text}</span>
+                    </h1>
+                    <p> I am a self-taught programmer. I took an interest in web development as I found it to be an interesting field I knew nothing about. But wanted to know how websites work and the process it takes to build one.
+                        I am interested in learning more about the field as I work in it and learn from those who have been at it longer than I have so I can cultivate my skills even more and make them more refined.
+                    </p>
+                    <button onClick={() => console.log("connect")}> Let's Connect <ArrowRightCircle size={25}/></button>
+                </Col>
+                    <Col xs={12} md={6} xl={5}>
                         <img src={headerImg} alt="Header Img"/>
-                        </Col>
                     </Col>
                 </Row>
             </Container>
         </section>
     )
 }
+
+
+
 
 //end video 34:55
