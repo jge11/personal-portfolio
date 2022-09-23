@@ -1,4 +1,9 @@
-import { Nav, Tab, TabContainer } from "react-bootstrap"
+import { Nav, Tab, Container, Row, Col } from "react-bootstrap";
+import { ProjectCard } from "./ProjectsCard";
+import colorSharp2 from "../assets/img/color-sharp2.png";
+import projImg1 from "../assets/img/project-img1.png"
+import projImg2 from "../assets/img/project-img2.png"
+import projImg3 from "../assets/img/project-img3.png"
 
 
 export const Projects = () => {
@@ -12,7 +17,12 @@ export const Projects = () => {
     {
         title: "Buisness Startup",
         description:" Design & Development",
-        imgUrl: projImg1,
+        imgUrl: projImg2,
+    },
+    {
+        title: "Buisness Startup",
+        description:" Design & Development",
+        imgUrl: projImg3,
     },
     {
         title: "Buisness Startup",
@@ -22,17 +32,12 @@ export const Projects = () => {
     {
         title: "Buisness Startup",
         description:" Design & Development",
-        imgUrl: projImg1,
+        imgUrl: projImg2,
     },
     {
         title: "Buisness Startup",
         description:" Design & Development",
-        imgUrl: projImg1,
-    },
-    {
-        title: "Buisness Startup",
-        description:" Design & Development",
-        imgUrl: projImg1,
+        imgUrl: projImg3,
     },
 
     ]
@@ -46,7 +51,7 @@ export const Projects = () => {
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni laborum excepturi sunt maxime, nesciunt accusantium? Consequatur totam atque sed perspiciatis, ratione aspernatur praesentium nesciunt repudiandae nihil, laboriosam odio, ullam quod!
                         </p>
                         <Tab.Container id="projects-tab" defaultActiveKey="first">
-                        <Nav variant="pills" defaultActiveKey="/home">
+                        <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                             <Nav.Item>
                                 <Nav.Link eventKey="first">Tab 1</Nav.Link>
                             </Nav.Item>
@@ -63,7 +68,8 @@ export const Projects = () => {
                                     {
                                         projects.map((project, index) =>{
                                             return(
-                                                <p>{project.title}</p>
+                                               <ProjectCard key={index}
+                                               {...project} />
                                             )
                                         }
                                         
@@ -78,6 +84,7 @@ export const Projects = () => {
                     </Col>
                 </Row>
             </Container>
+            <img className="background-image-right" src={colorSharp2}></img>
         </section>
     )
 }
