@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import headerImg from "../assets/img/header-img.svg";
+import 'animate.css';
+import TrackVisibility from 'react-on-screen';
+
+
 
 
 export const Banner = () => {
@@ -46,17 +50,23 @@ export const Banner = () => {
           <Container>
             <Row className="align-items-center">
               <Col xs={12} md={6} xl={7}>
-              <span className="tagline">Welcome to my Portfolio</span>
-                    <h1>
-                        {`Hi I'm Javier Garcia-Estrada `}<span className="wrap">{text}</span>
-                    </h1>
-                    <p> I am a self-taught programmer. I took an interest in web development as I found it to be an interesting field I knew nothing about. But wanted to know how websites work and the process it takes to build one.
-                        I am interested in learning more about the field as I work in it and learn from those who have been at it longer than I have so I can cultivate my skills even more and make them more refined.
-                    </p>
-                    <button onClick={() => console.log("connect")}> Let's Connect <ArrowRightCircle size={25}/></button>
+              <TrackVisibility>
+              {({ isVisible }) =>
+              <div className={isVisible ? "animated__animated animate__fadeIn" : ""}>
+                <span className="tagline">Welcome to my Portfolio</span>
+                <h1>{`Hi! I'm Javier `}<span className="wrap">{text}</span></h1>
+                <p> I am a self-taught programmer. I took an interest in web development as I found it to be an interesting field I knew nothing about. But wanted to know how websites work and the process it takes to build one.
+                    I am interested in learning more about the field as I work in it and learn from those who have been at it longer than I have so I can cultivate my skills even more and make them more refined.</p>
+              </div>}
+            </TrackVisibility>
                 </Col>
                     <Col xs={12} md={6} xl={5}>
+                    <TrackVisibility>
+              {({ isVisible }) =>
+                <div className={isVisible ? "animated__animated animate__zoomIn" : ""}>
                         <img src={headerImg} alt="Header Img"/>
+                        </div>}
+            </TrackVisibility>
                     </Col>
                 </Row>
             </Container>
